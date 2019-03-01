@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web:
+    build: ./docker/web
+    ports:
+      - "8818:80"
+    links:
+      - realm-save-db
+    volumes:
+      - ./:/var/www/html
+
+  realm-save-db:
+    build: ./docker/db
+    environment:
+      TZ: "Asia/Tokyo"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: realm_save_db
+
+    volumes:
+      - ./docker/db/init.d:/docker-entrypoint-initdb.d
+    ports:
+      - "3318:3306"

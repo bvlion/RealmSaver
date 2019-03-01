@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteRule ^(.*)$ module.php [QSA,L]
+
+ErrorDocument 404 "Page not found"

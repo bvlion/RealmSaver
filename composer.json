@@ -1,0 +1,14 @@
+{
+    "require": {
+        "slim/slim": "3.*",
+        "vlucas/phpdotenv": "*"
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.4"
+        }
+    },
+    "scripts": {
+        "start": "php -S 0.0.0.0:8888 -t . module.php"
+    }
+}
